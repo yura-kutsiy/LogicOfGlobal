@@ -80,7 +80,7 @@ resource "aws_instance" "win_serv_2019_1-b" {
     Name = "Win_2019_web_server_1-b"
   }
 }
-
+#target group
 resource "aws_lb_target_group" "target_group" {
   name     = "FirstTargetGroup"
   port     = 80
@@ -97,4 +97,16 @@ resource "aws_lb_listener" "web_server" {
     type             = "forward"
     target_group_arn = aws_lb_target_group.target_group.arn
   }
+}
+
+resource "aws_lb_target_group_attachment" "instance_1" {
+  target_group_arn = aws_lb_target_group.target_group.arn
+  target_id = aws_instance.win_serv_2019_1-a.id
+  port = 80
+}
+
+resource "aws_lb_target_group_attachment" "instance_2" {
+  target_group_arn = aws_lb_target_group.target_group.arn
+  target_id = aws_instance.win_serv_2019_1-b.id
+  port = 80
 }
