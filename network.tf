@@ -70,6 +70,7 @@ resource "aws_route_table_association" "route_public_1-b" {
 resource "aws_lb" "load_balancer" {
   name               = "LoadBalancer"
   load_balancer_type = "network"
+  enable_cross_zone_load_balancing = "true"
 
   subnet_mapping {
     subnet_id     = aws_subnet.public_subnet_1-a.id

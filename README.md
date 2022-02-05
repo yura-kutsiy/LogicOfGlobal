@@ -1,5 +1,5 @@
-# Globallogic
-trainee_task. Two instances in different subnet, in one VPC. Network Load Balancer.
+#LogicOfGlobal
+Two instances in different subnet, in one VPC. Network Load Balancer.
 
 Use terraform files to create infrastructure. Wich include instances in two different subnet for High Availability. Also create Network Load Balancer for balance traffic between two servers. Used user data for instance and create IIS webserver, and change settings to enable remote access (use powershell scripts).
 Second script clean IIS website, applications and folders.
