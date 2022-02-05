@@ -68,9 +68,15 @@ resource "aws_route_table_association" "route_public_1-b" {
 
 #create Network Load Balancer
 resource "aws_lb" "load_balancer" {
+<<<<<<< HEAD
   name               = "LoadBalancer"
   load_balancer_type = "network"
   enable_cross_zone_load_balancing = "true"
+=======
+  name                             = "LoadBalancer"
+  load_balancer_type               = "network"
+  enable_cross_zone_load_balancing = true
+>>>>>>> 9e04614257a2ea379fb47a7d63687a7e65d84cc3
 
   subnet_mapping {
     subnet_id     = aws_subnet.public_subnet_1-a.id
